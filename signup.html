@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>
+        Signup
+      </title>
+<style>
+.container {
+  width: 500px;
+  height: 550px;
+  box-shadow: 0px 0px 10px 3px cadetblue;
+  background-color: #333;
+  color: white;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 10px;
+  font-size: 16px;
+  width: 400px;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color:  cadetblue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+</style>
+  </head>
+  <body>
+    <div class="container" style="background-color: rgba(0,69,92,255);">
+      <h1>Sign Up</h1>
+      <form id="signup-form">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password:</label>
+          <input type="password" id="confirm-password" name="confirm-password" required>
+        </div>
+        <button type="submit">Sign Up</button>
+        <br><br>
+        <a href="login.html" style="color: white;">Login</a>
+      </form>
+    </div>
+
+    
+    <script>
+      const submitBtn = document.querySelector("#submit-btn");
+const message = document.querySelector("#message");
+
+submitBtn.addEventListener("click", function(event) {
+  event.preventDefault();
+  const username = document.querySelector("#username").value;
+  const password = document.querySelector("#password").value;
+
+  if (username === "admin" && password === "password") {
+    message.textContent = "Login Successful!";
+    message.style.color = "green";
+  } else {
+    message.textContent = "Login Failed. Try Again.";
+  }
+});  
+        </script>
+  </body>
+  
+</html>
